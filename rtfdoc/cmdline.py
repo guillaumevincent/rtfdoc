@@ -1,7 +1,7 @@
 try:
-    import ConfigParser as configparser
-except ImportError:
     import configparser
+except ImportError:
+    import ConfigParser as configparser
 
 import os
 import sys
