@@ -100,11 +100,7 @@ def generate(data):
     config = configparser.ConfigParser()
     config['RTFDOC'] = data
 
-    root_dir = data['root_dir']
-    if not os.path.exists(root_dir):
-        os.makedirs(root_dir)
-
-    with open(os.path.join(root_dir, config_file_name), 'w') as configfile:
+    with open(config_file_name, 'w') as configfile:
         config.write(configfile)
 
 
