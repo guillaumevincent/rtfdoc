@@ -3,8 +3,7 @@ import sys
 import configparser
 
 from rtfdoc import __version__
-
-config_file_name = 'rtfdoc.conf'
+from rtfdoc.constants import config_file_name
 
 
 class ValidationError(Exception):

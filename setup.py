@@ -42,6 +42,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
+            'rtfdoc-build = rtfdoc:main',
             'rtfdoc-quickstart = rtfdoc.quickstart:main',
         ],
     },
