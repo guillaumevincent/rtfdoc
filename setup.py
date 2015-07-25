@@ -14,10 +14,8 @@ setup(
     name='rtfdoc',
     version=__version__,
     description='create beautiful and intelligent markdown documentation',
-    long_description='''rtfdoc is a tool that makes it easy to create intelligent and beautiful documentation for
-    software projects, consisting of multiple markdown sources.
-    ''',
-    url='https://github.com/guillaumevincent/rtfdoc.git',
+    long_description='''rtfdoc is a tool that makes it easy to create intelligent and beautiful documentation for software projects, consisting of multiple markdown sources.''',
+    url='http://rtfdoc.com',
     author='Guillaume Vincent',
     author_email='guillaume@oslab.fr',
     license=LICENSE,
@@ -34,8 +32,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Topic :: Documentation',
-        'Topic :: Documentation :: rtfdoc',
-        'Topic :: Text Processing',
+        'Topic :: Software Development :: Documentation',
         'Topic :: Utilities',
     ],
     keywords='markdown documentation',
