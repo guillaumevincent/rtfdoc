@@ -96,11 +96,15 @@ It corresponds to the root of the hierarchical structure of the documentation. '
         do_prompt(config, 'master_document', 'Name of your master document', 'index.md')
 
 
-def generate(d):
+def generate(data):
     config = configparser.ConfigParser()
-    config['RTFDOC'] = d
+    config['RTFDOC'] = data
 
-    with open(config_file_name, 'w') as configfile:
+    root_dir = data['root_dir']
+    if not os.path.exists(root_dir):
+        os.makedirs(root_dir)
+
+    with open(os.path.join(root_dir, config_file_name), 'w') as configfile:
         config.write(configfile)
 
 
