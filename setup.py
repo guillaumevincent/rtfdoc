@@ -1,5 +1,5 @@
-from codecs import open
 from os import path
+from codecs import open
 
 from setuptools import setup
 
@@ -9,6 +9,11 @@ base_dir = path.abspath(path.dirname(__file__))
 
 with open(path.join(base_dir, 'LICENSE'), encoding='utf-8') as f:
     LICENSE = f.read()
+
+REQUIREMENTS = [
+    'CommonMark>=0.5.4',
+    'Jinja2>=2.7.3'
+]
 
 setup(
     name='rtfdoc',
@@ -37,12 +42,11 @@ setup(
     ],
     keywords='markdown documentation',
     packages=['rtfdoc'],
-    install_requires=[
-        'commonmark',
-    ],
+    install_requires=REQUIREMENTS,
+    include_package_data=True,
     entry_points={
         'console_scripts': [
-            'rtfdoc-build = rtfdoc:main',
+            'rtfdoc-build = rtfdoc.build:main',
             'rtfdoc-quickstart = rtfdoc.quickstart:main',
         ],
     },

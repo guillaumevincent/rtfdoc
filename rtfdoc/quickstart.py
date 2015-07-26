@@ -4,6 +4,7 @@ import configparser
 
 from rtfdoc import __version__
 from rtfdoc.constants import config_file_name
+from rtfdoc.utils import copy
 
 
 class ValidationError(Exception):
@@ -95,12 +96,19 @@ It corresponds to the root of the hierarchical structure of the documentation. '
         do_prompt(config, 'master_document', 'Name of your master document', 'index.md')
 
 
+def copy_assets():
+    assets_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets")
+    copy(assets_path, os.path.join(os.getcwd(), '_assets'))
+
+
 def generate(data):
     config = configparser.ConfigParser()
     config['RTFDOC'] = data
 
     with open(config_file_name, 'w') as configfile:
         config.write(configfile)
+
+    copy_assets()
 
 
 def main(argv=sys.argv):

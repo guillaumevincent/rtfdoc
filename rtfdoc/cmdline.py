@@ -25,8 +25,7 @@ def main(argv):
         sources_dir = os.path.abspath(config['RTFDOC']['root_dir'])
         build_dir = os.path.abspath(config['RTFDOC']['build_dir'])
 
-        utils = cmark.Utils()
-        utils.convert_dir_to_html(sources_dir, build_dir)
+        cmark.convert_dir_to_html(sources_dir, build_dir)
     except Exception:
         print('Error: something bad happend, can you report a bug ?')
         return 1
