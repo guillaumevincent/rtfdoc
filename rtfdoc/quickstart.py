@@ -94,6 +94,8 @@ A language should correspond to a folder in the root directory.''')
         print('''rtfdoc need a master document.
 It corresponds to the root of the hierarchical structure of the documentation. ''')
         do_prompt(config, 'master_document', 'Name of your master document', 'index.md')
+        print()
+        print('You can run rtfdoc-build to build you documentation.')
 
 
 def copy_assets():
